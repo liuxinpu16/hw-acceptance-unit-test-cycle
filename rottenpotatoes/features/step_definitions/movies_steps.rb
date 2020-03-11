@@ -1,3 +1,4 @@
+Learn more or give us feedback
 
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
@@ -22,4 +23,9 @@ Then /I should see all the movies/ do
   Movie.all.each do |movie|
     step %{I should see "#{movie.title}"}
   end
+end
+
+Then /^the director of "(.*)" should be "(.*)"/ do |title, director|
+  movie = Movie.where(title: title).first
+  expect(movie.director).to eq(director)
 end
