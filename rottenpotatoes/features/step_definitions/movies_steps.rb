@@ -1,4 +1,3 @@
-Learn more or give us feedback
 
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
